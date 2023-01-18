@@ -1,6 +1,6 @@
-# lean-kit
+# <img src="https://api.iconify.design/material-symbols:cleaning-bucket.svg?color=%23d37eb4" width="40"  height="40"/> lean-kit
 
-## Svelte-kit stater template
+Svelte-kit stater template
 
 ### Features:
 
