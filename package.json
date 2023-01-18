@@ -1,6 +1,6 @@
 {
-	"name": "dango-notes",
-	"version": "0.0.1",
+	"name": "lean-kit",
+	"version": "0.0.2",
 	"private": true,
 	"scripts": {
 		"dev": "vite dev",
