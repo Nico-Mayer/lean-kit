@@ -8,16 +8,18 @@
 </script>
 
 <section class="flex flex-col m-auto space-y-10 items-center">
-	<div class="bg-white rounded flex h-50 w-50" class:shadow-xl={shadow}>
-		<h1 class="font-bold m-auto text-nord3">lean-kit</h1>
+	<div
+		class="rounded flex bg-nord6 h-50 shadow-nord15 w-50 dark:bg-nord3 "
+		class:shadow-xl={shadow}>
+		<h1 class="font-bold m-auto">lean-kit</h1>
 	</div>
 	<button
-		class="rounded flex bg-nord4 p-2 text-red-500 gap-2 items-center"
+		class="rounded flex bg-nord5 h-10 p-2 w-10 gap-2 items-center dark:bg-nord2"
 		on:click={toggleShadow}>
 		<iconify-icon
 			icon={!shadow ? 'tabler:shadow-off' : 'tabler:shadow'}
 			class:animate-wobble={shadow}
 			class:animate-swing={!shadow}
-			class="animate-fast text-2xl text-nord0" />
+			class="animate-fast text-2xl " />
 	</button>
 </section>
