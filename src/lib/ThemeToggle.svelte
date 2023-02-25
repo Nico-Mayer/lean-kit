@@ -1,7 +1,6 @@
 <script lang="ts">
 	// relies on script in app.html
 	import { onMount } from 'svelte'
-	import { slide } from 'svelte/transition'
 	let theme: string | null
 
 	onMount(() => {
@@ -22,11 +21,11 @@
 
 <button
 	on:click={toggleTheme}
-	class="rounded flex bg-nord5 h-10 p-2 top-10 right-10 w-10 absolute dark:bg-nord3">
-	<iconify-icon
-		icon={theme == 'dark' ? 'tabler:moon' : 'tabler:sun'}
-		class="animate-fast text-2xl"
-		class:animate-wobble={theme == 'dark'}
-		class:animate-swing={theme == 'light'}
-		transition:slide />
+	class="rounded flex bg-nord-5 h-10 p-2 top-10 right-10 w-10 absolute dark:bg-nord-3">
+	<div
+		class="animate__fast text-2xl"
+		class:i-tabler-sun={theme == 'light'}
+		class:i-tabler-moon={theme == 'dark'}
+		class:animate__wobble={theme == 'dark'}
+		class:animate__swing={theme == 'light'} />
 </button>
