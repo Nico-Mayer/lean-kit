@@ -1,28 +1,26 @@
 <script lang="ts">
-	let shadow = false
+	import { activeTheme } from '$lib/stores/store'
 
-	function toggleShadow() {
-		shadow = !shadow
+	function toggleTheme() {
+		if ($activeTheme === 'dark') {
+			localStorage.setItem('theme', 'light')
+			document.documentElement.classList.remove('dark')
+			$activeTheme = 'light'
+			return
+		} else {
+			localStorage.setItem('theme', 'dark')
+			document.documentElement.classList.add('dark')
+			$activeTheme = 'dark'
+			return
+		}
 	}
 </script>
 
-<section class="flex flex-col m-auto space-y-10 items-center">
-	<div
-		class="rounded flex bg-nord-6 h-52 shadow-nord-15 w-52 dark:bg-nord-3 "
-		class:shadow-xl={shadow}>
-		<h1 class="font-bold m-auto">lean-kit</h1>
-	</div>
+<main
+	class="w-screen h-screen dark:bg-black dark:text-white flex items-center justify-center">
 	<button
-		class="rounded flex bg-nord-5 h-10 p-2 w-10 gap-2 items-center dark:bg-nord-2"
-		on:click={toggleShadow}>
-		<div
-			class="i-tabler-shadow animate__fast text-2xl"
-			class:animate__wobble={shadow}
-			class:animate__swing={!shadow}
-			class:i-tabler-shadow-off={!shadow} />
-		<!-- <iconify-icon
-			icon=
-			
-			class="" /> -->
+		class="flex items-center justify-center gap-4 border p-4 py-2 rounded-md"
+		on:click={toggleTheme}>
+		<span>lean-kit</span>
 	</button>
-</section>
+</main>

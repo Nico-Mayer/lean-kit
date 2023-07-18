@@ -1,10 +1,23 @@
 <script lang="ts">
 	import '../app.css'
-	import ThemeToggle from '$lib/ThemeToggle.svelte'
+	import { activeTheme } from '$lib/stores/store'
+	import { onMount } from 'svelte'
+
+	onMount(() => {
+		const localTheme = localStorage.getItem('theme')
+
+		switch (localTheme) {
+			case 'dark':
+				$activeTheme = 'dark'
+				break
+			case 'light':
+				$activeTheme = 'light'
+				break
+			default:
+				$activeTheme = 'dark'
+				break
+		}
+	})
 </script>
 
-<main
-	class="flex h-screen bg-nord-4 w-screen text-nord-0 relative dark:bg-nord-0 dark:text-nord-6">
-	<ThemeToggle />
-	<slot />
-</main>
+<slot />
