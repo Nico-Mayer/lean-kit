@@ -21,6 +21,7 @@
 	<button
 		class="flex items-center justify-center gap-4 border p-4 py-2 rounded-md"
 		on:click={toggleTheme}>
+		<div class="i-tabler-sun" />
 		<span>lean-kit</span>
 	</button>
 </main>
