@@ -1,33 +1,9 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 	<head>
-		<script>
-			const userTheme = localStorage.getItem('theme')
-			const systemTheme = window.matchMedia(
-				'(prefers-color-scheme: dark)'
-			).matches
-				? 'dark'
-				: 'light'
-
-			function themeCheck() {
-				if (
-					userTheme === 'dark' ||
-					(userTheme === null && systemTheme === 'dark')
-				) {
-					localStorage.setItem('theme', 'dark')
-
-					document.documentElement.classList.add('dark')
-					return
-				}
-				localStorage.setItem('theme', 'light')
-
-				document.documentElement.classList.remove('dark')
-			}
-			themeCheck()
-		</script>
 		<meta charset="utf-8" />
 		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">
